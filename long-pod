@@ -1,0 +1,28 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name:nginxsm2
+  namespace: long-task
+spec：
+  replicas: 5
+  template:
+    spec：
+	  containers:
+	  - name:nginxsm2
+	    image: nginx
+		imagePullPolicy: Always
+    command: ["Fiona test the LongPod!""\n""Hello nginx!"]
+		resources:
+		  requests:
+		    cpu: 30m
+			memory: 50Mi
+		limits:
+		  cpu: 30m
+		  memory: 50Mi
+	  restartPolicy: Always
+    
+    
+    
+    
+    
+    
