@@ -7,16 +7,23 @@ spec：
   parallelism: 5
   template:
     spec：
-	  containers:
-	  - name: pishort20s
-	    image: perl
-		imagePullPolicy: IfNotPresent
-		command: ["perl","-Mbignum=bpi","-wle","print bpi(2000)"] 3000
-		resources:
-		  requests:
-		    cpu: 30m
-			memory: 35Mi
-	  restartPolicy: Never
+      containers:
+      - name: pishort20s
+	image: perl
+        imagePullPolicy: IfNotPresent
+        command: ["perl","-Mbignum=bpi","-wle","print bpi(2000)"] 
+        resources:
+	  requests:
+            cpu: 30m
+            memory: 35Mi
+	  limits:
+	    cpu: 30m
+	    memory: 35Mi
+    restartPolicy: Never
+    
+    
+
+
 
 
 
